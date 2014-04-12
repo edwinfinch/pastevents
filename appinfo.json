@@ -1,0 +1,65 @@
+{
+    "versionLabel": "0.7",
+    "uuid": "1f500688-4460-4b7c-9155-16cb562c5865",
+    "appKeys": {},
+    "longName": "Past Events",
+    "versionCode": 15,
+    "capabilities": [
+        ""
+    ],
+    "shortName": "Past Events",
+    "companyName": "edwin",
+    "watchapp": {
+        "watchface": false
+    },
+    "resources": {
+        "media": [
+            {
+                "type": "png",
+                "name": "IMAGE_SUCCESS",
+                "file": "images/success.png"
+            },
+            {
+                "type": "png",
+                "name": "IMAGE_CAL",
+                "file": "images/event.png"
+            },
+            {
+                "menuIcon": true,
+                "type": "png",
+                "name": "IMAGE_ICON",
+                "file": "images/icon.png"
+            },
+            {
+                "type": "png",
+                "name": "IMAGE_PLUS",
+                "file": "images/action_icon_plus.png"
+            },
+            {
+                "type": "png",
+                "name": "IMAGE_CHECKMARK",
+                "file": "images/checkmark.png"
+            },
+            {
+                "type": "png",
+                "name": "IMAGE_DOWN",
+                "file": "images/arrow_down.png"
+            },
+            {
+                "type": "png",
+                "name": "IMAGE_UP",
+                "file": "images/arrow_up.png"
+            },
+            {
+                "type": "png",
+                "name": "IMAGE_NEXT",
+                "file": "images/arrow_next.png"
+            },
+            {
+                "type": "png",
+                "name": "IMAGE_SETTINGS",
+                "file": "images/settings.png"
+            }
+        ]
+    }
+}
