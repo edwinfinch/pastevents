@@ -1,9 +1,9 @@
 {
-    "versionLabel": "0.7",
+    "versionLabel": "0.7.1",
     "uuid": "1f500688-4460-4b7c-9155-16cb562c5865",
     "appKeys": {},
     "longName": "Past Events",
-    "versionCode": 15,
+    "versionCode": 16,
     "capabilities": [
         ""
     ],

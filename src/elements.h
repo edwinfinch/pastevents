@@ -80,5 +80,5 @@ char timeSetBuffer2[] = "Time: NA:NA DD/MM";
 char timeSetBuffer3[] = "Time: NA:NA DD/MM";
 char timeSetBuffer4[] = "Time: NA:NA DD/MM";
 char charFix[1][1] = {{'b'},};
-char charArray[1][36] = {{'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'},};
+char charArray[1][37] = {{'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ' '},};
 bool event1, event2, event3, event4, event5;

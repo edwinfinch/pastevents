@@ -33,7 +33,8 @@ void tick_handler(struct tm *tick_time, TimeUnits units_changed){
 	minute = tick_time->tm_min;
 	hour = tick_time->tm_hour;
 	day = tick_time->tm_mday;
-	month = tick_time->tm_mon;
+	int mon = tick_time->tm_mon;
+	month = mon+1;
 }
 	
 void updateDesText(){
@@ -197,31 +198,56 @@ void updateEvent(int event){
 	if(event == 0){
 		snprintf(eventBuffer, sizeof(eventBuffer), "%c%c%c%c%c", settings.events[event][0], settings.events[event][1], settings.events[event][2], settings.events[event][3], settings.events[event][4]);
 		ev_first_menu_items[event].title = eventBuffer;
-		snprintf(timeSetBuffer, sizeof(timeSetBuffer), "Time: %d:%d %d/%d", settings.eventTimes[event][0], settings.eventTimes[event][1], settings.eventTimes[event][2], settings.eventTimes[event][3]);
+		if(settings.eventTimes[event][1] < 10){
+			snprintf(timeSetBuffer, sizeof(timeSetBuffer), "Time: %d:0%d %d/%d", settings.eventTimes[event][0], settings.eventTimes[event][1], settings.eventTimes[event][2], settings.eventTimes[event][3]);
+		}
+		else{
+			snprintf(timeSetBuffer, sizeof(timeSetBuffer), "Time: %d:%d %d/%d", settings.eventTimes[event][0], settings.eventTimes[event][1], settings.eventTimes[event][2], settings.eventTimes[event][3]);
+		}
 		ev_first_menu_items[event].subtitle = timeSetBuffer;
 	}
 	else if(event == 1){
 		snprintf(eventBuffer1, sizeof(eventBuffer1), "%c%c%c%c%c", settings.events[event][0], settings.events[event][1], settings.events[event][2], settings.events[event][3], settings.events[event][4]);
 		ev_first_menu_items[event].title = eventBuffer1;
-		snprintf(timeSetBuffer1, sizeof(timeSetBuffer1), "Time: %d:%d %d/%d", settings.eventTimes[event][0], settings.eventTimes[event][1], settings.eventTimes[event][2], settings.eventTimes[event][3]);
+		if(settings.eventTimes[event][1] < 10){
+			snprintf(timeSetBuffer1, sizeof(timeSetBuffer1), "Time: %d:0%d %d/%d", settings.eventTimes[event][0], settings.eventTimes[event][1], settings.eventTimes[event][2], settings.eventTimes[event][3]);
+		}
+		else{
+			snprintf(timeSetBuffer1, sizeof(timeSetBuffer1), "Time: %d:%d %d/%d", settings.eventTimes[event][0], settings.eventTimes[event][1], settings.eventTimes[event][2], settings.eventTimes[event][3]);
+		}
 		ev_first_menu_items[event].subtitle = timeSetBuffer1;
 	}
 	else if(event == 2){
 		snprintf(eventBuffer2, sizeof(eventBuffer2), "%c%c%c%c%c", settings.events[event][0], settings.events[event][1], settings.events[event][2], settings.events[event][3], settings.events[event][4]);
 		ev_first_menu_items[event].title = eventBuffer2;
-		snprintf(timeSetBuffer2, sizeof(timeSetBuffer2), "Time: %d:%d %d/%d", settings.eventTimes[event][0], settings.eventTimes[event][1], settings.eventTimes[event][2], settings.eventTimes[event][3]);
+		if(settings.eventTimes[event][1] < 10){
+			snprintf(timeSetBuffer2, sizeof(timeSetBuffer2), "Time: %d:0%d %d/%d", settings.eventTimes[event][0], settings.eventTimes[event][1], settings.eventTimes[event][2], settings.eventTimes[event][3]);
+		}
+		else{
+			snprintf(timeSetBuffer2, sizeof(timeSetBuffer2), "Time: %d:%d %d/%d", settings.eventTimes[event][0], settings.eventTimes[event][1], settings.eventTimes[event][2], settings.eventTimes[event][3]);
+		}
 		ev_first_menu_items[event].subtitle = timeSetBuffer2;
 	}
 	else if(event == 3){
 		snprintf(eventBuffer3, sizeof(eventBuffer3), "%c%c%c%c%c", settings.events[event][0], settings.events[event][1], settings.events[event][2], settings.events[event][3], settings.events[event][4]);
 		ev_first_menu_items[event].title = eventBuffer3;
-		snprintf(timeSetBuffer3, sizeof(timeSetBuffer3), "Time: %d:%d %d/%d", settings.eventTimes[event][0], settings.eventTimes[event][1], settings.eventTimes[event][2], settings.eventTimes[event][3]);
+		if(settings.eventTimes[event][1] < 10){
+			snprintf(timeSetBuffer3, sizeof(timeSetBuffer3), "Time: %d:0%d %d/%d", settings.eventTimes[event][0], settings.eventTimes[event][1], settings.eventTimes[event][2], settings.eventTimes[event][3]);
+		}
+		else{
+			snprintf(timeSetBuffer3, sizeof(timeSetBuffer3), "Time: %d:%d %d/%d", settings.eventTimes[event][0], settings.eventTimes[event][1], settings.eventTimes[event][2], settings.eventTimes[event][3]);
+		}
 		ev_first_menu_items[event].subtitle = timeSetBuffer3;
 	}
 	else if(event == 4){
 		snprintf(eventBuffer4, sizeof(eventBuffer4), "%c%c%c%c%c", settings.events[event][0], settings.events[event][1], settings.events[event][2], settings.events[event][3], settings.events[event][4]);
 		ev_first_menu_items[event].title = eventBuffer4;
-		snprintf(timeSetBuffer4, sizeof(timeSetBuffer4), "Time: %d:%d %d/%d", settings.eventTimes[event][0], settings.eventTimes[event][1], settings.eventTimes[event][2], settings.eventTimes[event][3]);
+		if(settings.eventTimes[event][1] < 10){
+			snprintf(timeSetBuffer4, sizeof(timeSetBuffer4), "Time: %d:0%d %d/%d", settings.eventTimes[event][0], settings.eventTimes[event][1], settings.eventTimes[event][2], settings.eventTimes[event][3]);
+		}
+		else{
+			snprintf(timeSetBuffer4, sizeof(timeSetBuffer4), "Time: %d:%d %d/%d", settings.eventTimes[event][0], settings.eventTimes[event][1], settings.eventTimes[event][2], settings.eventTimes[event][3]);
+		}
 		ev_first_menu_items[event].subtitle = timeSetBuffer4;
 	}
 }
@@ -326,7 +352,7 @@ void window_load_options(Window *window){
 	};
 	op_second_menu_items[1] = (SimpleMenuItem){
 		.title = "Events Version",
-		.subtitle = "0.7b Stable",
+		.subtitle = "0.7.1c Stable",
 	};
 	
 	op_menu_sections[0] = (SimpleMenuSection){
@@ -551,10 +577,10 @@ void up(ClickRecognizerRef recognizer, void *context){
 		text_layer_set_text(select_char_text_layer, textBuffer);
 	}
 	else if(char1Set == 1 || char2Set == 1 || char3Set == 1 || char4Set == 1 || char5Set == 1){
-		if(letterNum < 36){
+		if(letterNum < 37){
 			letterNum++;
 		}
-		if(letterNum > 35){
+		if(letterNum > 36){
 			letterNum = 0;
 		}
 		snprintf(textBuffer, sizeof(textBuffer), "%c", charArray[0][letterNum]);
@@ -593,7 +619,7 @@ void down(ClickRecognizerRef recognizer, void *context){
 			letterNum--;
 		}
 		if(letterNum < 0){
-			letterNum = 35;
+			letterNum = 36;
 		}
 		snprintf(textBuffer, sizeof(textBuffer), "%c", charArray[0][letterNum]);
 		text_layer_set_text(select_char_text_layer, textBuffer);
